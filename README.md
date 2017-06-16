@@ -1,8 +1,7 @@
 # IcLauncherGenerator
 Program for automated creation of images ic_launcher for Android applications.
 
-- 1.0/                 Version 1.0 of "IcLauncherGenerator" source files
-- 2.0/                 Version 2.0 of "IcLauncherGenerator" source files
+- source               Source files
 - LICENSE_EN           license of "IcLauncherGenerator" in English
 - LICENSE_RU           license of "IcLauncherGenerator" in Russian
 - README               this file

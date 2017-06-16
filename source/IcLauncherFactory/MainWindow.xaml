@@ -14,14 +14,20 @@
             <Setter Property="Margin" Value="2"/>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Margin="0,10,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="360*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="358*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="1"/>
                 <GradientStop Color="{DynamicResource Color1}" Offset="0.357"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <ScrollViewer HorizontalAlignment="Left" Width="266" Margin="0,28,0,18">
+        <ScrollViewer HorizontalAlignment="Left" Width="266" Margin="0,59,0,18">
             <StackPanel HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="256">
                 <Image x:Name="imageXxxdpi" Height="192" Width="192" Style="{DynamicResource proxybg}"/>
                 <Label x:Name="labelXxxdpi" Content="xxxdpi 192x192" Style="{DynamicResource titles}"/>
@@ -32,12 +38,12 @@
                 <Image x:Name="imageHdpi" Height="72" Width="72" Style="{DynamicResource proxybg}"/>
                 <Label x:Name="labelHdpi" Content="hdpi 72x72" Style="{DynamicResource titles}"/>
                 <Image x:Name="imageMdpi" Height="48" Width="48" Style="{DynamicResource proxybg}"/>
-                <Label x:Name="labelMdpi" Content="mdpi 48x48" Style="{DynamicResource titles}"/>                
+                <Label x:Name="labelMdpi" Content="mdpi 48x48" Style="{DynamicResource titles}"/>
             </StackPanel>
         </ScrollViewer>
-        <Menu x:Name="menu" Height="28" VerticalAlignment="Top">
+        <Menu x:Name="menu" Height="28" VerticalAlignment="Top" Grid.ColumnSpan="4">
             <MenuItem Header="_Файл">
-                <MenuItem Header="_Загрузить" Click="filelOad_Click"/>
+                <MenuItem Header="_Загрузить" Click="fileLoad_Click"/>
                 <MenuItem Header="_Выход" Click="ExitItem_Click"/>
             </MenuItem>
             <MenuItem Header="_Значки">
@@ -48,7 +54,27 @@
                 <MenuItem Header="О _Программе" Click="AboutItem_Click"/>
             </MenuItem>
         </Menu>
-        <Image x:Name="imageOriginal" Margin="331,134,61,136" Source="bggproxybig.png"/>
-        <StatusBar Height="18" VerticalAlignment="Bottom"/>
+        <Image x:Name="imageOriginal" Margin="331,134,61,136" Source="bggproxybig.png" Grid.ColumnSpan="4"/>
+        <StatusBar Height="18" VerticalAlignment="Bottom" Grid.ColumnSpan="4"/>
+        <ToolBar x:Name="toolBar" Margin="0,28,0,0" VerticalAlignment="Top" Height="31" Grid.ColumnSpan="4">
+            <Button x:Name="buttonFileLoad"  Height="26" VerticalAlignment="Top" Width="180" Click="fileLoad_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="file-png.png" Margin="0,0,5,0"/>
+                    <TextBlock Text="Загрузить файл"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="buttonGenerate" Height="26" VerticalAlignment="Top" Width="180" Click="GenerateItem_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="pan.png" Margin="0,0,5,0"/>
+                    <TextBlock Text="Генерировать значки"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="buttonExport" Height="26" VerticalAlignment="Top" Width="180" Click="ExportItem_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="filesave.png" Margin="0,0,5,0"/>
+                    <TextBlock Text="Экспортировать значки"/>
+                </StackPanel>
+            </Button>
+        </ToolBar>
     </Grid>
 </Window>

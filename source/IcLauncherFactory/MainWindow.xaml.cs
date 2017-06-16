@@ -4,6 +4,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace IcLauncherFactory
 {
@@ -25,7 +26,7 @@ namespace IcLauncherFactory
             this.Close();
         }
 
-        private void filelOad_Click(object sender, RoutedEventArgs e)
+        private void fileLoad_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog sourseFileOpenDialog = new Microsoft.Win32.OpenFileDialog();
             sourseFileOpenDialog.Filter = "Изображение в формате PNG|*.png";
@@ -91,38 +92,41 @@ namespace IcLauncherFactory
             Bitmap sourceBitmap = new Bitmap(sourceFileName);
             System.Drawing.Image saveImage;
             try
-            {
-                // Устанавливаем значение текущей папки
-                Environment.CurrentDirectory = path;
+            {               
                 // Физическое изменение исходного изображения и сохранение файлов значков
                 switch (format)
                 {
                     case FormatList.hdpi:
                         {
+                            SetCurrentDirectory(path,format);
                             saveImage = sourceBitmap.GetThumbnailImage(72, 72, null, IntPtr.Zero);
-                            saveImage.Save("hdpi.png", System.Drawing.Imaging.ImageFormat.Png);
+                            saveImage.Save("ic_launcher.png", System.Drawing.Imaging.ImageFormat.Png);
                         }
                         break;
                     case FormatList.mdpi:
                         {
+                            SetCurrentDirectory(path, format);
                             saveImage = sourceBitmap.GetThumbnailImage(48, 48, null, IntPtr.Zero);
                             saveImage.Save("mdpi.png", System.Drawing.Imaging.ImageFormat.Png);
                         }
                         break;
                     case FormatList.xdpi:
                         {
+                            SetCurrentDirectory(path, format);
                             saveImage = sourceBitmap.GetThumbnailImage(96, 96, null, IntPtr.Zero);
                             saveImage.Save("xdpi.png", System.Drawing.Imaging.ImageFormat.Png);
                         }
                         break;
                     case FormatList.xxdpi:
                         {
+                            SetCurrentDirectory(path, format);
                             saveImage = sourceBitmap.GetThumbnailImage(144, 144, null, IntPtr.Zero);
                             saveImage.Save("xxdpi.png", System.Drawing.Imaging.ImageFormat.Png);
                         }
                         break;
                     case FormatList.xxxdpi:
                         {
+                            SetCurrentDirectory(path, format);
                             saveImage = sourceBitmap.GetThumbnailImage(192, 192, null, IntPtr.Zero);
                             saveImage.Save("xxxdpi.png", System.Drawing.Imaging.ImageFormat.Png);
                         }
@@ -136,10 +140,36 @@ namespace IcLauncherFactory
             }
         }
 
+       /// <summary>
+       /// Устанавливает текущую папку для сохранения значка в том или ином конкретном формате
+       /// </summary>
+       /// <param name="path">Путь к корневой папке для сохранения значков</param>
+       /// <param name="format">Формат</param>       
+        private static void SetCurrentDirectory(string path,FormatList format)
+        {
+            string formatName;
+            switch (format)
+            {
+                case FormatList.hdpi: formatName = "hdpi";break;
+                case FormatList.mdpi: formatName = "mdpi"; break;
+                case FormatList.xdpi: formatName = "xhdpi"; break;
+                case FormatList.xxdpi: formatName = "xxhdpi"; break;
+                case FormatList.xxxdpi: formatName = "xxxhdpi"; break;
+                default: formatName = "hdpi"; break;
+            }            
+            Directory.CreateDirectory(path + "mipmap-"+formatName+"\\");
+            Environment.CurrentDirectory = path +"mipmap-"+formatName+"\\";
+        }
+
         private void AboutItem_Click(object sender, RoutedEventArgs e)
         {
             WindowAbout about = new WindowAbout();
             about.ShowDialog();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

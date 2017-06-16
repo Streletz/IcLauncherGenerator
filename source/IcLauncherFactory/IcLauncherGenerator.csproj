@@ -187,6 +187,13 @@
   <ItemGroup>
     <Resource Include="Значок.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="file-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="filesave.png" />
+    <Resource Include="pan.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
