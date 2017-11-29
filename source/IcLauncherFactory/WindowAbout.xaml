@@ -17,7 +17,7 @@
         </LinearGradientBrush></Grid.Background>
         <Label x:Name="headerLabel" Content="О Программе" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Style="{DynamicResource headers}"/>
         <Label x:Name="appNameLabel" Content="Генератор ic_launcher" HorizontalAlignment="Left" Margin="19,36,0,0" VerticalAlignment="Top" Style="{DynamicResource headers}"/>
-        <Label x:Name="versionLabel" Content="Версия 3.1" HorizontalAlignment="Left" Margin="19,62,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>
+        <Label x:Name="versionLabel" Content="Версия 4.0" HorizontalAlignment="Left" Margin="19,62,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>
         <Label x:Name="authorLabel" Content="Разработчик: Стрелец Coder" HorizontalAlignment="Left" Margin="19,113,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>
         <Label x:Name="siteLabel" Content="http://streletzcoder.ru/" HorizontalAlignment="Left" Margin="19,139,0,0" VerticalAlignment="Top" Style="{DynamicResource link}" MouseDown="SiteLabel_MouseDown"/>
         <Label x:Name="yearLabel" Content="2015-2017" HorizontalAlignment="Left" Margin="19,165,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>

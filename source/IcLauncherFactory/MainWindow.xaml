@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IcLauncherFactory"
         mc:Ignorable="d"
-        Title="Генератор ic_launcher" Height="600" Width="800" MinWidth="800" MinHeight="600" Icon="Значок.ico">
+        Title="Генератор ic_launcher" Height="600" Width="800" MinWidth="800" MinHeight="600" Icon="Значок.ico" Closing="Window_Closing">
     <Window.Resources>
         <Color x:Key="Color1">#FFE4661F</Color>
         <Style x:Key="proxybg" TargetType="{x:Type Image}">
@@ -20,10 +20,7 @@
     </Window.Resources>
     <Grid Margin="0,10,0,0">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="360*"/>
-            <ColumnDefinition Width="47*"/>
-            <ColumnDefinition Width="27*"/>
-            <ColumnDefinition Width="358*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -58,29 +55,29 @@
                 <MenuItem Header="О _Программе" Click="AboutItem_Click"/>
             </MenuItem>
         </Menu>
-        <Image x:Name="imageOriginal" Margin="331,134,61,136" Source="bggproxybig.png" Grid.ColumnSpan="4"/>
+        <Image x:Name="imageOriginal" Margin="331,134,61,136" Source="bggproxybig.png" Grid.ColumnSpan="4" Drop="imageOriginal_Drop" AllowDrop="True"/>
         <StatusBar Height="18" VerticalAlignment="Bottom" Grid.ColumnSpan="4"/>
         <ToolBarPanel x:Name="toolBar" Margin="0,28,0,0" VerticalAlignment="Top" Height="31" Grid.ColumnSpan="4">
             <Grid Background="#FFFBFBFB">
-                
-            <Button Style="{StaticResource toolButton}" x:Name="buttonFileLoad"  Height="26" VerticalAlignment="Top" Width="180" Click="fileLoad_Click" Margin="0,0,612,0" >
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="file-png.png" Margin="0,0,5,0"/>
-                    <TextBlock Text="Загрузить файл"/>
-                </StackPanel>
-            </Button>
+
+                <Button Style="{StaticResource toolButton}" x:Name="buttonFileLoad"  Height="26" VerticalAlignment="Top" Width="180" Click="fileLoad_Click" Margin="0,0,612,0" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="file-png.png" Margin="0,0,5,0"/>
+                        <TextBlock Text="Загрузить файл"/>
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource toolButton}" x:Name="buttonGenerate" Height="26" VerticalAlignment="Top" Width="180" Click="GenerateItem_Click" Margin="185,0,427,0">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="pan.png" Margin="0,0,5,0"/>
-                    <TextBlock Text="Генерировать значки"/>
-                </StackPanel>
-            </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="pan.png" Margin="0,0,5,0"/>
+                        <TextBlock Text="Генерировать значки"/>
+                    </StackPanel>
+                </Button>
                 <Button Style="{StaticResource toolButton}" x:Name="buttonExport" Height="26" VerticalAlignment="Top" Width="180" Click="ExportItem_Click" Margin="370,0,242,0">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="filesave.png" Margin="0,0,5,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="filesave.png" Margin="0,0,5,0"/>
                         <TextBlock Text="Экспортировать значки"/>
                     </StackPanel>
-            </Button>
+                </Button>
             </Grid>
         </ToolBarPanel>
     </Grid>
