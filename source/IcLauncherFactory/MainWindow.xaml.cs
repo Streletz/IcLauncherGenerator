@@ -14,6 +14,7 @@ namespace IcLauncherFactory
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const string OutputFileName = "ic_launcher.png";
         private BitmapImage _sourceViewBitmap;
         private string _sourceFileName;       
         private bool _imagesGenerated = false;
@@ -164,35 +165,35 @@ namespace IcLauncherFactory
                         {
                             SetCurrentDirectory(path, format);
                             saveImage = sourceBitmap.GetThumbnailImage(72, 72, null, IntPtr.Zero);
-                            saveImage.Save("ic_launcher.png", System.Drawing.Imaging.ImageFormat.Png);
+                            saveImage.Save(OutputFileName, System.Drawing.Imaging.ImageFormat.Png);
                         }
                         break;
                     case FormatList.mdpi:
                         {
                             SetCurrentDirectory(path, format);
                             saveImage = sourceBitmap.GetThumbnailImage(48, 48, null, IntPtr.Zero);
-                            saveImage.Save("mdpi.png", System.Drawing.Imaging.ImageFormat.Png);
+                            saveImage.Save(OutputFileName, System.Drawing.Imaging.ImageFormat.Png);
                         }
                         break;
                     case FormatList.xdpi:
                         {
                             SetCurrentDirectory(path, format);
                             saveImage = sourceBitmap.GetThumbnailImage(96, 96, null, IntPtr.Zero);
-                            saveImage.Save("xdpi.png", System.Drawing.Imaging.ImageFormat.Png);
+                            saveImage.Save(OutputFileName, System.Drawing.Imaging.ImageFormat.Png);
                         }
                         break;
                     case FormatList.xxdpi:
                         {
                             SetCurrentDirectory(path, format);
                             saveImage = sourceBitmap.GetThumbnailImage(144, 144, null, IntPtr.Zero);
-                            saveImage.Save("xxdpi.png", System.Drawing.Imaging.ImageFormat.Png);
+                            saveImage.Save(OutputFileName, System.Drawing.Imaging.ImageFormat.Png);
                         }
                         break;
                     case FormatList.xxxdpi:
                         {
                             SetCurrentDirectory(path, format);
                             saveImage = sourceBitmap.GetThumbnailImage(192, 192, null, IntPtr.Zero);
-                            saveImage.Save("xxxdpi.png", System.Drawing.Imaging.ImageFormat.Png);
+                            saveImage.Save(OutputFileName, System.Drawing.Imaging.ImageFormat.Png);
                         }
                         break;
                 }

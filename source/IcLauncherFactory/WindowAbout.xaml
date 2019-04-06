@@ -17,10 +17,10 @@
         </LinearGradientBrush></Grid.Background>
         <Label x:Name="headerLabel" Content="О Программе" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" Style="{DynamicResource headers}"/>
         <Label x:Name="appNameLabel" Content="Генератор ic_launcher" HorizontalAlignment="Left" Margin="19,36,0,0" VerticalAlignment="Top" Style="{DynamicResource headers}"/>
-        <Label x:Name="versionLabel" Content="Версия 4.0" HorizontalAlignment="Left" Margin="19,62,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>
+        <Label x:Name="versionLabel" Content="Версия 4.0.1" HorizontalAlignment="Left" Margin="19,62,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>
         <Label x:Name="authorLabel" Content="Разработчик: Стрелец Coder" HorizontalAlignment="Left" Margin="19,113,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>
         <Label x:Name="siteLabel" Content="http://streletzcoder.ru/" HorizontalAlignment="Left" Margin="19,139,0,0" VerticalAlignment="Top" Style="{DynamicResource link}" MouseDown="SiteLabel_MouseDown"/>
-        <Label x:Name="yearLabel" Content="2015-2017" HorizontalAlignment="Left" Margin="19,165,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>
+        <Label x:Name="yearLabel" Content="2015-2019" HorizontalAlignment="Left" Margin="19,165,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>
         <Button x:Name="buttonOk" Content="OK" HorizontalAlignment="Left" Margin="107,277,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
         <Label x:Name="authorLabel_Copy" Content="Изображения для панели инструментов:" HorizontalAlignment="Left" Margin="19,191,0,0" VerticalAlignment="Top" Style="{DynamicResource titles}"/>
         <Label x:Name="picturesLabel" Content="https://icons8.com/" HorizontalAlignment="Left" Margin="19,217,0,0" VerticalAlignment="Top" Style="{DynamicResource link}" MouseDown="picturesLabel_MouseDown"/>
